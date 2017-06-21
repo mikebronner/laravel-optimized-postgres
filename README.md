@@ -15,6 +15,15 @@ By default I like my Postgres database to use `text` type for all textual fields
 composer require genealabs/laravel-optimized-postgres
 ```
 
+### Service Provider
+If you are on Laravel 5.5, the service provider will auto-register once the
+ package is installed. You can skip this step. If you haven't upgraded to
+ Laravel 5.5 yet, add the following to the `providers` array in your
+ `\config\app.php` file:
+```php
+GeneaLabs\LaravelOptimizedPostgres\Providers\LaravelOptimizedPostgresService::class,
+```
+
 ## Usage
 When writing migrations, be sure to remove the following use statement from the
  top of the file:

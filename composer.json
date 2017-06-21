@@ -17,5 +17,12 @@
             "GeneaLabs\\LaravelOptimizedPostgres\\Tests\\": "tests/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GeneaLabs\\LaravelOptimizedPostgres\\Providers\\LaravelOptimizedPostgresService"
+            ]
+        }
+    }
 }
