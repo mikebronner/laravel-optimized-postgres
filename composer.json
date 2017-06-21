@@ -1,0 +1,21 @@
+{
+    "name": "genealabs/laravel-optimized-postgres",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Bronner",
+            "email": "mike@genealabs.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": ">=5.4",
+        "illuminate/support": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeneaLabs\\LaravelOptimizedPostgres\\": "src/",
+            "GeneaLabs\\LaravelOptimizedPostgres\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
