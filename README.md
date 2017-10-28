@@ -1,4 +1,5 @@
 # Optimized Postgres for Laravel
+[![Join the chat at https://gitter.im/GeneaLabs/laravel-optimized-postgres](https://badges.gitter.im/GeneaLabs/laravel-optimized-postgres.svg)](https://gitter.im/GeneaLabs/laravel-optimized-postgres?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Impetus
 By default I like my Postgres database to use `text` type for all textual fields.
