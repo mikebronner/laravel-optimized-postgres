@@ -7,7 +7,7 @@ class Schema extends OriginalSchema
 {
     public static function connection($name) : Builder
     {
-        return $this->setCustomGrammar(static::$app['db']->connection($name));
+        return self::setCustomGrammar(static::$app['db']->connection($name));
     }
 
     protected static function getFacadeAccessor()
