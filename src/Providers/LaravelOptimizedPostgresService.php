@@ -1,8 +1,10 @@
 <?php namespace GeneaLabs\LaravelOptimizedPostgres\Providers;
 
 use GeneaLabs\LaravelOptimizedPostgres\Schema;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\Fluent;
+use Illuminate\Support\ServiceProvider;
 
 class LaravelOptimizedPostgresService extends ServiceProvider
 {
@@ -26,7 +28,7 @@ class LaravelOptimizedPostgresService extends ServiceProvider
 
     protected function registerSchemaMacros()
     {
-        Blueprint::macro('dropIndexIfExists', function(string $index): Fluent {
+        Blueprint::macro('dropIndexIfExists', function (string $index): Fluent {
             if ($this->hasIndex($index)) {
                 return $this->dropIndex($index);
             }
@@ -34,12 +36,11 @@ class LaravelOptimizedPostgresService extends ServiceProvider
             return new Fluent();
         });
 
-        Blueprint::macro('hasIndex', function(string $index): bool {
-            $conn = Schema::getConnection();
-            $dbSchemaManager = $conn->getDoctrineSchemaManager();
-            $doctrineTable = $dbSchemaManager->listTableDetails($this->getTable());
-
-            return $doctrineTable->hasIndex($index);
+        Blueprint::macro('hasIndex', function (string $index): bool {
+            return Schema::getConnection()
+                ->getDoctrineSchemaManager()
+                ->listTableDetails($this->getTable())
+                ->hasIndex($index);
         });
     }
 }
