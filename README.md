@@ -1,4 +1,7 @@
 # Optimized Postgres for Laravel
+
+![Optimized Postgres for Laravel](https://repository-images.githubusercontent.com/94943563/38eea380-f344-11e9-95f0-1cd990116866)
+
 [![Join the chat at https://gitter.im/GeneaLabs/laravel-optimized-postgres](https://badges.gitter.im/GeneaLabs/laravel-optimized-postgres.svg)](https://gitter.im/GeneaLabs/laravel-optimized-postgres?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Impetus
