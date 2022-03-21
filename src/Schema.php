@@ -12,7 +12,9 @@ class Schema extends OriginalSchema
 
     protected static function getFacadeAccessor()
     {
-        return self::setCustomGrammar(static::$app['db']->connection());
+        self::setCustomGrammar(static::$app["db"]->connection());
+
+        return "db.schema";
     }
 
     protected static function setCustomGrammar($connection)
