@@ -3,6 +3,7 @@
 namespace GeneaLabs\LaravelOptimizedPostgres\Tests;
 
 use GeneaLabs\LaravelOptimizedPostgres\SchemaGrammar;
+use Illuminate\Database\Connection;
 use Illuminate\Support\Fluent;
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +15,8 @@ class SchemaGrammarTest extends TestCase
     {
         parent::setUp();
 
-        $this->grammar = new SchemaGrammar();
+        $connection = $this->createMock(Connection::class);
+        $this->grammar = new SchemaGrammar($connection);
     }
 
     public function test_char_type_returns_text(): void
