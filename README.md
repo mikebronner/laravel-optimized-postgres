@@ -11,8 +11,13 @@ By default I like my Postgres database to use `text` type for all textual fields
 
 ## Installation
 ### Requirements
-- PHP >=7.0
-- Laravel >=5.4
+
+| Laravel | PHP        |
+|---------|------------|
+| 10.x    | 8.2+       |
+| 11.x    | 8.2+       |
+| 12.x    | 8.2+       |
+| 13.x    | 8.3+       |
 
 ### Composer Command
 ```sh

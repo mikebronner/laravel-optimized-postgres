@@ -16,7 +16,6 @@ class LaravelOptimizedPostgresService extends ServiceProvider
 
     public function register()
     {
-        //TODO: figure out how to overwrite the already loaded schema alias.
         AliasLoader::getInstance()->alias('Schema', Schema::class);
         $this->registerSchemaMacros();
     }
@@ -38,9 +37,8 @@ class LaravelOptimizedPostgresService extends ServiceProvider
 
         Blueprint::macro('hasIndex', function (string $index): bool {
             return Schema::getConnection()
-                ->getDoctrineSchemaManager()
-                ->listTableDetails($this->getTable())
-                ->hasIndex($index);
+                ->getSchemaBuilder()
+                ->hasIndex($this->getTable(), $index);
         });
     }
 }
