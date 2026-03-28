@@ -20,7 +20,7 @@ class Schema extends OriginalSchema
     protected static function setCustomGrammar($connection)
     {
         if (get_class($connection) === 'Illuminate\Database\PostgresConnection') {
-            $connection->setSchemaGrammar(app(SchemaGrammar::class));
+            $connection->setSchemaGrammar(new SchemaGrammar($connection));
         }
 
         return $connection->getSchemaBuilder();
