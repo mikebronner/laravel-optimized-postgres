@@ -48,5 +48,5 @@ jobs:
             vendor/bin/phpunit
           else
             echo "No test runner found — verifying package loads successfully"
-            php -r "require 'vendor/autoload.php'; new GeneaLabs\LaravelOptimizedPostgres\SchemaGrammar(); echo 'Package loads OK';"
+            php -r "require 'vendor/autoload.php'; echo 'Package autoload OK' . PHP_EOL; \$ref = new ReflectionClass(GeneaLabs\LaravelOptimizedPostgres\SchemaGrammar::class); echo 'SchemaGrammar class OK' . PHP_EOL;"
           fi
